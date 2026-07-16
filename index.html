@@ -1,3 +1,7 @@
+539:    (item.key !== "ruler" || ["א'", "ב'", "ג'", "ד'"].includes(g.letter))
+717:  const fixedRulerInfo = ["ה'", "ו'"].includes(g.letter) ? `
+721:      <div style="font-size:12.5px;color:var(--ink-soft);margin-top:6px;">פריט קבוע — ללא אפשרות בחירה</div>
+746:          ${fixedRulerInfo}
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -714,6 +718,14 @@ function renderPackage(){
     </div>
   `).join("");
 
+  const fixedRulerInfo = ["ה'", "ו'"].includes(g.letter) ? `
+    <div class="custom-item">
+      <div class="label">סרגל <span class="badge">כלול בחבילה</span></div>
+      <div style="font-size:14px;color:var(--ink);font-weight:600;">סרגל מתכת רגיל ללא מיתוג</div>
+      <div style="font-size:12.5px;color:var(--ink-soft);margin-top:6px;">פריט קבוע — ללא אפשרות בחירה</div>
+    </div>
+  ` : "";
+
   return `
   ${topbar()}
   <div class="wrap">
@@ -735,6 +747,7 @@ function renderPackage(){
       <div>
         <div class="card" style="margin-bottom:20px;">
           <h3>בחירת עיצוב אישי</h3>
+          ${fixedRulerInfo}
           ${customBlocks}
         </div>
         <button class="btn btn-amber btn-block" style="padding:14px;font-size:15.5px;" onclick="addToCart()">🛒 הוסף לסל</button>
