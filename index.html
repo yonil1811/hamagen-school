@@ -958,7 +958,7 @@ function updateForm(key, val){ state.form[key]=val; if(state.errors[key]) delete
    4. Paste that URL below, instead of the empty string.
    Until a URL is set here, registrations simply skip the network call
    and the demo flow still works end-to-end. */
-const SHEET_ENDPOINT = "excel_url_here"; // <-- Apps Script Web App URL
+const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxEhqlodbpHTHTQLCN1yMHQHct85TGkQwPMQruQjj936bgCsTAWpVtpJEWjcVASUsgWgA/exec";
 
 function submitToGoogleSheet(payload){
   if(!SHEET_ENDPOINT) return Promise.resolve();
