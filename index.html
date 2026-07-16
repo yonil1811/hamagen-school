@@ -536,7 +536,11 @@ const CUSTOM_ITEMS = [
   { key: "scissors", label: "מספריים" },
 ];
 
-function customItemsFor(){ return CUSTOM_ITEMS; }
+function customItemsFor(g){
+  return CUSTOM_ITEMS.filter(item =>
+    item.key !== "stickers" || ["א'", "ב'", "ג'"].includes(g.letter)
+  );
+}
 
 function packagePrice(g){ return g.price; }
 
